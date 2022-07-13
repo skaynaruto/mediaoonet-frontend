@@ -48,7 +48,7 @@ class Posts extends React.Component {
                                 <img
                   style={{width:"auto", height:"300px"}}
                   className="img-thumbnail"
-                  src={`${ process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
+                  src={`${ process.env.REACT_APP_API_URL}post/photo/${post._id}`}
                   onError={i => (i.target.src =`${DefaultPost}` )}
                   alt={post.title}
         />
