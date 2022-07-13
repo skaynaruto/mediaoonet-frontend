@@ -53,7 +53,7 @@ class FindPeople extends React.Component {
                   style={{ borderRadius:"50%",border:"1px solid black", height: "200px", width: "200px" }}
                   className="img-thumbnail"
                   src={`${process.env.REACT_APP_API_URL
-                  }/user/photo/${user._id}`}
+                  }user/photo/${user._id}`}
                   onError={i => (i.target.src =`${DefaultProfile}` )}
                   alt={user.name}
         />
