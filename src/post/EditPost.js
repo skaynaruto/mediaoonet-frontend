@@ -140,7 +140,7 @@ class EditPost extends Component {
             const postUrl = id
             ? `${
                 process.env.REACT_APP_API_URL
-              }/post/photo/${id}?${new Date().getTime()}`
+              }post/photo/${id}?${new Date().getTime()}`
             : DefaultPost
         // if (redirectToProfile) {
         //     return <Redirect to={`/user/${user.id}`} />
