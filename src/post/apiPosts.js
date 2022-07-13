@@ -13,7 +13,7 @@ export const  createPost = (userId,token,post) =>{
     .catch(err => console.log(err))
 }
 export const  fetchPost = (page) =>{
-    return fetch(`${process.env.REACT_APP_API_URL}/posts/?page=${page}`,{
+    return fetch(`${process.env.REACT_APP_API_URL}posts/?page=${page}`,{
         method:"GET"
     })
     .then(response =>{
