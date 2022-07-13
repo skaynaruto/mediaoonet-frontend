@@ -97,7 +97,7 @@ class Profile extends React.Component {
         }
         const photoUrl = _id
             ? `${process.env.REACT_APP_API_URL
-            }/user/photo/${_id}?${new Date().getTime()}`
+            }user/photo/${_id}?${new Date().getTime()}`
             : userAvater;
         return (
             <div className="container">
