@@ -26,7 +26,7 @@ class FollowTabs extends Component {
                                         style={{ borderRadius: "50%", border: "1px solid black" }}
                                         height={"30px"}
                                         width={"30px"}
-                                        onError={i => (i.target.src = `${DefaultProfile}`)} src={`${process.env.REACT_APP_API_URL}/user/photo/${person._id}`} alt={person.name} />
+                                        onError={i => (i.target.src = `${DefaultProfile}`)} src={`${process.env.REACT_APP_API_URL}user/photo/${person._id}`} alt={person.name} />
                                     <div>
                                         <p className='lead'>{person.name}</p>
                                     </div>
@@ -49,7 +49,7 @@ class FollowTabs extends Component {
                                         style={{ borderRadius: "50%", border: "1px solid black" }}
                                         height={"30px"}
                                         width={"30px"}
-                                        onError={i => (i.target.src = `${DefaultProfile}`)} src={`${process.env.REACT_APP_API_URL}/user/photo/${person._id}`} alt={person.name} />
+                                        onError={i => (i.target.src = `${DefaultProfile}`)} src={`${process.env.REACT_APP_API_URL}user/photo/${person._id}`} alt={person.name} />
                                     <div>
                                         <p className='lead'>{person.name}</p>
                                     </div>
@@ -70,7 +70,7 @@ class FollowTabs extends Component {
                                             style={{}}
                                             height={"100px"}
                                             width={"100px"}
-                                            onError={i => (i.target.src = `${DefaultPost}`)} src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`} alt={post.title} />
+                                            onError={i => (i.target.src = `${DefaultPost}`)} src={`${process.env.REACT_APP_API_URL}post/photo/${post._id}`} alt={post.title} />
                                         <div>
                                             <p className='lead' >{post.title}</p>
                                         </div>
