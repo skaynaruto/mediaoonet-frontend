@@ -52,7 +52,6 @@ class EditPost extends Component {
                     body:"",
                     title:"",
                     error:"",
-                    postImageId:'',
                     loading:false,
                     redirectToPost:true,
                     sucess:true,
