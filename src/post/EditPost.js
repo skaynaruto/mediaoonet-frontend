@@ -42,7 +42,7 @@ class EditPost extends Component {
             const postId = this.props.match.params.postId;
             const userId = isAuthenticated().user._id;
             const token = isAuthenticated().token;
-            console.log(this.postData)
+//             console.log(this.postData)
             editPost(postId,userId,token, this.postData).then((data => {
                 //console.log(data)
                 if (data.error) this.setState({ error: data.error,loading:false })
