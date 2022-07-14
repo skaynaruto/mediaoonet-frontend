@@ -11,7 +11,6 @@ class EditPost extends Component {
         this.state = {
             id:'',
             body:"",
-            postImageId:"",
             title:'',
             redirectToPost:false,
             error:"",
@@ -52,6 +51,7 @@ class EditPost extends Component {
                     body:"",
                     title:"",
                     error:"",
+                    posimagetId:'',
                     loading:false,
                     redirectToPost:true,
                     sucess:true,
@@ -68,7 +68,7 @@ class EditPost extends Component {
     init = postId => {
         fetchSinglePost(postId)
             .then(data => {
-                //console.log(JSON.stringify(data));
+                console.log(data);
                 if (data.error) {
                     this.setState({
                         redirectToPost: true
@@ -77,7 +77,7 @@ class EditPost extends Component {
                 else{
                 this.setState({
                     id: data.postedBy._id,
-                    postImageId:data._id,
+                    posimagetId:data._id,
                     body: data.body,
                     title: data.title,
                     error:"",
@@ -135,7 +135,7 @@ class EditPost extends Component {
         const { 
             id,
             title,
-            postImageId,
+            posimagetId,
             body,
             error,
             loading,
@@ -143,7 +143,7 @@ class EditPost extends Component {
             const postUrl = id
             ? `${
                 process.env.REACT_APP_API_URL
-              }post/photo/${postImageId}?${new Date().getTime()}`
+              }post/photo/${posimagetId}?${new Date().getTime()}`
             : DefaultPost
         // if (redirectToProfile) {
         //     return <Redirect to={`/user/${user.id}`} />
@@ -157,14 +157,16 @@ class EditPost extends Component {
                         <h2>Loading...</h2>
                     </div>
                 ) : ""}
-                <div className="alert alert-info" style={{ display: sucess ? "" : "none" }}>Post Updated sucessfully.<Link to={`/singlepost/${postImageId}`}>Click here to see post</Link></div>
+                <div className="alert alert-info" style={{ display: sucess ? "" : "none" }}>Post Updated sucessfully.<Link to={`singlepost/${id}`}>Click here to see post</Link></div>
                  <img
                   style={{width:"auto", height:"300px"}}
                   className="img-thumbnail"
                   src={postUrl}
                   onError={i => (i.target.src =`${DefaultPost}` )}
-                  alt={title}
-        />       {(isAuthenticated().user._id === id) && this.editPostForm(title, body)}
+                  alt={title}        />   
+                  {/* {this.editPostForm(title,body)}     */}
+                  {console.log(isAuthenticated().user,id )}
+                  {(isAuthenticated().user._id === id) && this.editPostForm(title, body) }
             </div>
         );
     }
