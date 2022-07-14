@@ -11,7 +11,7 @@ class EditPost extends Component {
         this.state = {
             id:'',
             body:"",
-            postImageId,
+            postImageId:"",
             title:'',
             redirectToPost:false,
             error:"",
@@ -135,7 +135,7 @@ class EditPost extends Component {
         const { 
             id,
             title,
-            postImageId
+            postImageId,
             body,
             error,
             loading,
@@ -164,7 +164,7 @@ class EditPost extends Component {
                   src={postUrl}
                   onError={i => (i.target.src =`${DefaultPost}` )}
                   alt={title}
-        />       {(isAuthenticated().user._id) === id && this.editPostForm(title, body)}
+        />       {(isAuthenticated().user._id === id) && this.editPostForm(title, body)}
             </div>
         );
     }
