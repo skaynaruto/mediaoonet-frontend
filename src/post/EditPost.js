@@ -163,10 +163,9 @@ class EditPost extends Component {
                   className="img-thumbnail"
                   src={postUrl}
                   onError={i => (i.target.src =`${DefaultPost}` )}
-                  alt={title}        />   
-                  {/* {this.editPostForm(title,body)}     */}
-                  {console.log(isAuthenticated().user,id )}
+                  alt={title}        />            
                   {(isAuthenticated().user._id === id) && this.editPostForm(title, body) }
+                   {(isAuthenticated().user.role === 'admin') && this.editPostForm(title, body) }
             </div>
         );
     }
