@@ -123,7 +123,7 @@ class SinglePost extends Component {
                             <div className="d-inline-block">
                                 <Link
                                     className="btn btn-raised btn-success mr-5"
-                                    to={`post/edit/${post._id}`} 
+                                    to={`/post/edit/${post._id}`} 
                                 >
                                     Edit post
                                 </Link>
