@@ -164,7 +164,7 @@ class EditPost extends Component {
                   src={postUrl}
                   onError={i => (i.target.src =`${DefaultPost}` )}
                   alt={title}
-        />       {isAuthenticated().user.role == 'admin' || (isAuthenticated().user._id == id && this.editPostForm(title, body) )}
+        />       {(isAuthenticated().user._id) === id && this.editPostForm(title, body)}
             </div>
         );
     }
