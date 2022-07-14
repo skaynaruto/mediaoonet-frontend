@@ -157,7 +157,7 @@ class EditPost extends Component {
                         <h2>Loading...</h2>
                     </div>
                 ) : ""}
-                <div className="alert alert-info" style={{ display: sucess ? "" : "none" }}>Post Updated sucessfully.<Link to={`singlepost/${id}`}>Click here to see post</Link></div>
+                <div className="alert alert-info" style={{ display: sucess ? "" : "none" }}>Post Updated sucessfully.<Link to={`/singlepost/${id}`}>Click here to see post</Link></div>
                  <img
                   style={{width:"auto", height:"300px"}}
                   className="img-thumbnail"
