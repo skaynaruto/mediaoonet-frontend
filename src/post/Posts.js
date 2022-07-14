@@ -39,7 +39,7 @@ class Posts extends React.Component {
 
             <div className="column">
                 {posts.map((post, i) => {
-                    const posterId = post.postedBy ? `/user/${post.postedBy._id}` : "";
+                    const posterId = post.postedBy ? `user/${post.postedBy._id}` : "";
                     const posterName = post.postedBy ? post.postedBy.name :"unknown";
                     
                     return (
@@ -64,7 +64,7 @@ class Posts extends React.Component {
                                     </Link>
                                     on {new Date(post.created).toDateString()}
                                 </p>
-                                <Link className="" to={`/singlepost/${post._id}`}>View more....</Link>
+                                <Link className="" to={`singlepost/${post._id}`}>View more....</Link>
                             </div>
                         </div>
                     )
