@@ -85,7 +85,7 @@ class NewPost extends React.Component {
     newPostForm = (title,body) => (
         <form>
             <div className="form-group">
-                <label className="text-muted">Profile Photo</label>
+                <label className="text-muted">Upload image</label>
                 <label className="custom-file-upload">
                     <input onChange={this.handleChange("photo")} type="file" accept="image/*" className="form-control" />
                     <i className="fa fa-cloud-upload" /> Attach
