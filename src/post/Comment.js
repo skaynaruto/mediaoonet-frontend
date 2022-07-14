@@ -95,7 +95,7 @@ class Comment extends Component {
                                         style={{ borderRadius: "50%", border: "1px solid black" }}
                                         height={"30px"}
                                         width={"30px"}
-                                        onError={i => (i.target.src = `${DefaultProfile}`)} src={`${process.env.REACT_APP_API_URL}/user/photo/${comment.postedBy._id}`} alt={comment.postedBy.name} />
+                                        onError={i => (i.target.src = `${DefaultProfile}`)} src={`${process.env.REACT_APP_API_URL}user/photo/${comment.postedBy._id}`} alt={comment.postedBy.name} />
                                     <div>
                                         <p className='lead'>{comment.postedBy.name}</p>
                                     </div>
