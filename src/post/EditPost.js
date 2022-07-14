@@ -11,6 +11,7 @@ class EditPost extends Component {
         this.state = {
             id:'',
             body:"",
+            postImageId,
             title:'',
             redirectToPost:false,
             error:"",
@@ -75,7 +76,8 @@ class EditPost extends Component {
                 }
                 else{
                 this.setState({
-                    id: data._id,
+                    id: data.postedBy._id,
+                    postImageId:data._id,
                     body: data.body,
                     title: data.title,
                     error:"",
@@ -133,6 +135,7 @@ class EditPost extends Component {
         const { 
             id,
             title,
+            postImageId
             body,
             error,
             loading,
@@ -140,7 +143,7 @@ class EditPost extends Component {
             const postUrl = id
             ? `${
                 process.env.REACT_APP_API_URL
-              }post/photo/${id}?${new Date().getTime()}`
+              }post/photo/${postImageId}?${new Date().getTime()}`
             : DefaultPost
         // if (redirectToProfile) {
         //     return <Redirect to={`/user/${user.id}`} />
@@ -154,7 +157,7 @@ class EditPost extends Component {
                         <h2>Loading...</h2>
                     </div>
                 ) : ""}
-                <div className="alert alert-info" style={{ display: sucess ? "" : "none" }}>Post Updated sucessfully.<Link to={`/singlepost/${id}`}>Click here to see post</Link></div>
+                <div className="alert alert-info" style={{ display: sucess ? "" : "none" }}>Post Updated sucessfully.<Link to={`/singlepost/${postImageId}`}>Click here to see post</Link></div>
                  <img
                   style={{width:"auto", height:"300px"}}
                   className="img-thumbnail"
