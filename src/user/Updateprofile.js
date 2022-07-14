@@ -174,7 +174,8 @@ class Updateprofile extends React.Component {
         )}
         <img src={photoUrl} className="img-thumbnail" alt="Profile" onError={i => (i.target.src = `${DefaultProfile}`)} style={{ borderRadius:"50%" ,border:"1px solid black", width: "200px", height: "200px"}} />
                 <div className="alert alert-info" style={{ display: sucess ? "" : "none" }}>Profile Updated sucessfully</div>
-                {isAuthenticated().user.role == 'admin' || (isAuthenticated().user._id == id && this.signupForm(name, email, password,about) )}
+                {(isAuthenticated().user._id == id && this.signupForm(name, email, password,about) )}
+                {(isAuthenticated().user.role == 'admin' && this.signupForm(name, email, password,about) )}
                
             </div>
 
