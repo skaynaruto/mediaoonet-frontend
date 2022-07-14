@@ -122,7 +122,7 @@ class Profile extends React.Component {
                                 >
                                     Create Post
                                 </Link>
-                                <Link className="btn btn-raised btn-success mr-5" to={`/user/${_id}/update`}>Edit profile</Link>
+                                <Link className="btn btn-raised btn-success mr-5" to={`user/${_id}/update`}>Edit profile</Link>
                                 <Deleteuser userId={_id} />
                             </div>
                         ) : (<FollowProfileButton following={this.state.following} onButtonClick={this.clickFollowButton} />)}
