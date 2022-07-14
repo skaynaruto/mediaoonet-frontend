@@ -12,6 +12,7 @@ class EditPost extends Component {
             id:'',
             body:"",
             title:'',
+            postImagdId:'',
             redirectToPost:false,
             error:"",
             sucess:false,
@@ -51,7 +52,7 @@ class EditPost extends Component {
                     body:"",
                     title:"",
                     error:"",
-                    posimagetId:'',
+                    postImageId:'',
                     loading:false,
                     redirectToPost:true,
                     sucess:true,
@@ -77,7 +78,7 @@ class EditPost extends Component {
                 else{
                 this.setState({
                     id: data.postedBy._id,
-                    posimagetId:data._id,
+                    postImageId:data._id,
                     body: data.body,
                     title: data.title,
                     error:"",
@@ -135,7 +136,7 @@ class EditPost extends Component {
         const { 
             id,
             title,
-            posimagetId,
+            postImageId,
             body,
             error,
             loading,
@@ -143,7 +144,7 @@ class EditPost extends Component {
             const postUrl = id
             ? `${
                 process.env.REACT_APP_API_URL
-              }post/photo/${posimagetId}?${new Date().getTime()}`
+              }post/photo/${postImagetId}?${new Date().getTime()}`
             : DefaultPost
         // if (redirectToProfile) {
         //     return <Redirect to={`/user/${user.id}`} />
